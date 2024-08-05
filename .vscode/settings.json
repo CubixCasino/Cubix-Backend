@@ -1,0 +1,9 @@
+{
+  "conventionalCommits.scopes": [
+    "Get game",
+    "Create database",
+    "User verification by SMS",
+    "Testing",
+    "Email verification"
+  ]
+}
