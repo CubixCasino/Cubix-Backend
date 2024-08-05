@@ -1,7 +1,5 @@
 import express from "express";
 import { registerUserHandler } from "../handlers/userHandler.js";
-
-import {authHandler } from "../handlers/authhandler.js";
 import recoveryPasswordHandler from "../handlers/postPasswordRecoveryHandler.js";
 import {
   deleteUser,
@@ -9,6 +7,7 @@ import {
   getAllUser,
 } from "../controllers/userController.js";
 import {verifyEmailHandler } from "../handlers/emailHandler.js";
+import { authHandler } from "../handlers/authhandler.js";
 
 export const router = express.Router();
 
