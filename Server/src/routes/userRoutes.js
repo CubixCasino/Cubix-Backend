@@ -1,6 +1,7 @@
 import express from "express";
 import { registerUserHandler } from "../handlers/userHandler.js";
-import { authHandler } from "../handlers/authhandler.js";
+
+import {authHandler } from "../handlers/authhandler.js";
 import recoveryPasswordHandler from "../handlers/postPasswordRecoveryHandler.js";
 import {
   deleteUser,
@@ -12,7 +13,6 @@ import {verifyEmailHandler } from "../handlers/emailHandler.js";
 export const router = express.Router();
 
 router.get("/", getAllUser);
-router.route("/:id").delete(deleteUser).get(findOneUser);
 
 router.post("/register", registerUserHandler);
 router.post("/validate-user", authHandler);
