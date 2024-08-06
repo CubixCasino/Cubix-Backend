@@ -1,6 +1,6 @@
 To verify the user's email, the endpoint to be used is:
 
-http://localhost:3001/users/verify-email
+https://cubix.onrender.com/users/verify-email
 
 The request body must be:
 

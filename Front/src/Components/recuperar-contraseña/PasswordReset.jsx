@@ -18,7 +18,7 @@ const PasswordReset = () => {
     }
   }, [location.search]);
 
-  const URL = 'http://localhost:3001/users/recovery-password';
+  const URL = 'https://cubix.onrender.com/users/recovery-password';
 
   const handleSubmit = async () => {
     if (password !== confirmPassword) {

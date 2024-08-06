@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const URL = "http://localhost:3001/users/register"
+const URL = "https://cubix.onrender.com/users/register"
 
 // const POST_USER = "POST_USER"
 
@@ -18,7 +18,7 @@ export const createUser  = (form) =>{
 
 
 export const twilioConfirm = (number) =>{
-    const URL_TWILIO =  `http://localhost:3001/verifyuser/sendOTP/${number}`
+    const URL_TWILIO =  `https://cubix.onrender.com/verifyuser/sendOTP/${number}`
     return async () =>{
         try {
             const response = await axios.post(URL_TWILIO)

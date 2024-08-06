@@ -8,7 +8,7 @@ const EmailForm = ({ onSubmit, onclose }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [email, setEmail] = useState("");
 
-  const URL = 'http://localhost:3001/users/verify-email';
+  const URL = 'https://cubix.onrender.com/users/verify-email';
 
   const handleFinish = async (values) => {
     setEmail(values.email); // Guardar el email para pasarlo al modal
