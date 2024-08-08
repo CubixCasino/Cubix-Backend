@@ -8,7 +8,7 @@ const sequelize = new Sequelize(envs.DB_URI, {
   dialectOptions: envs.DB_USE_SSL === 'true' ? {
     ssl: {
       require: true,
-      rejectUnauthorized: false, // Esto puede ser necesario si estás usando certificados autofirmados
+      // rejectUnauthorized: false, // Esto puede ser necesario si estás usando certificados autofirmados
     },
   } : {},
 });
