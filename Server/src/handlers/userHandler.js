@@ -14,7 +14,7 @@ export const registerUserHandler = async (req, res) => {
         message: error.map((error) => error.message),
       });
     }
-    console.log('data register:',data)
+  
     const newUser = await userService.createUser(data);
 
     const habaneroResponse = await registerUser(data.username, data.password);

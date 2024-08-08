@@ -7,17 +7,6 @@ export const validationPhone = z.object({
     .max(16, "Phone number must have maximum 16 characters"),
 });
 
-// export const validationOTP = z.object({
-//   phoneNumber: z
-//     .string({ message: "Phone number is required" })
-//     .min(11, "Phone number must have minimum 11 characters")
-//     .max(16, "Phone number must have maximum 16 characters"),
-//   OTP: z
-//     .number({ message: "The OTP must be a number" })
-//     .gte(100000, { message: "The OTP must have 6 digits" })
-//     .lte(999999, { message: "The OTP must have 6 digits" }),
-// });
-
 export const validatePhone = (data) => {
   try {
     validationPhone.parse(data);
@@ -62,9 +51,6 @@ export const validateOTP = (userData) => {
       return { data: {phoneNumber:userData.phoneNumber, OTP:userData.OTP}, error: null };
     }
   }
-
-  
-
 };
 
 export const parseLoginData = (data) => {

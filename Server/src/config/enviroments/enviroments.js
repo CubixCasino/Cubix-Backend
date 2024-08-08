@@ -14,4 +14,6 @@ export const envs = {
   APIKEY: env.get("APIKEY").required().asString(),
   EMAIL: env.get("EMAIL").required().asString(),
   EMAIL_PASSWORD: env.get("EMAIL_PASSWORD").required().asString(),
+  SECRET_JWT_SEED: env.get("SECRET_JWT_SEED").required().asString(),
+  JWT_EXPIRE_IN: env.get("JWT_EXPIRE_IN").required().asString(),
 };

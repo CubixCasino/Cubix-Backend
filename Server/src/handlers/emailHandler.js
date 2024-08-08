@@ -24,7 +24,7 @@ const verifyEmailHandler = async (req, res) => {
       .status(400)
       .json({ status: "error", message: error.map((e) => e.message) });
     } else {
-      const redirectUrl = `http://localhost:5173/recovery?username=${dataValues.username}`;
+      const redirectUrl = `https://cubixtest.vercel.app/recovery?username=${dataValues.username}`;
     
       await sendEmailPassword(dataValues.username, email, redirectUrl);
       res.status(200).json("Email was sent successfully.");

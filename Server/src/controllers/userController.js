@@ -1,9 +1,9 @@
 import axios from "axios";
 import { envs } from "../config/enviroments/enviroments.js";
 import { UserService } from "../services/user.service.js";
-import { validateWitchHabanero } from "./authController.js";
 
 const userService = new UserService();
+
 export const registerUser = async (username, password) => {
   const payload = {
     BrandId: envs.BRANDID,
@@ -37,12 +37,13 @@ export const registerUser = async (username, password) => {
 
 export const getAllUser = async (req, res) => {
   const users = await userService.findAll();
-  console.log("users", users);
+
   return res.status(200).json(users);
 };
 
-export const deleteUser = async (req, res) => {
+export const deletedUser = async (req, res) => {
   const { id } = req.params;
+
   const user = await userService.findOneById(id);
 
   if (!user) {
@@ -68,21 +69,5 @@ export const findOneUser = async (req, res) => {
 
 export const validateEmail = async (email) => {
   const user = await userService.findByEmail(email);
-
-  // if (!user) {
-  //   throw new Error("User not found");
-  // } else {
-  //   const habaneroResponse = await validateWitchHabanero(
-  //     user.username,
-  //     password
-  //   );
-
-  //   if (!habaneroResponse) {
-  //     throw new Error(habaneroResponse.message, 404);
-  //   }
-  // }
-
   return user;
-    // habaneroData: habaneroResponse.data,
-  
 };

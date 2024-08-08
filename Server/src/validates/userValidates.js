@@ -5,6 +5,9 @@ export const userSchema = z.object({
     .string({ message: "Username is required." })
     .min(3, "Username must be at least 3 characters")
     .max(150, "Username cannot be more than 150 characters"),
+    picture: z
+    .string({ message: "Picture url is required." })
+    .url({ message: "Invalid url" }),
   surname: z
     .string()
     .min(3, "Last name must be at least 3 characters")
@@ -54,7 +57,7 @@ export const parseUserData = (data) => {
     userSchema.parse(data);
     return { data, error: null };
   } catch (e) {
-    console.log("Errorrs", e);
+    console.log("Errors", e);
     const errors = e.errors.map((error) => ({
       message: error.message,
     }));

@@ -5,6 +5,12 @@ const sendOTP = async (phoneNumber) => {
 
   console.log("Phone number", phoneNumber);
    
+  console.log(
+    "Datos Twilio:",
+    envs.ACCOUNTSID,
+    envs.AUTHTOKEN,
+    envs.SERVICESID
+  );
   try {
 
         const client = new twilio(envs.ACCOUNTSID, envs.AUTHTOKEN);

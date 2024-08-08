@@ -21,6 +21,10 @@ const User = sequelize.define(
       allowNull: false,
       unique: true,
     },
+    picture: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -46,11 +50,11 @@ const User = sequelize.define(
     },
   },
   {
-    hooks: {
-      beforeCreate: async (user) => {
-        user.password = await encryptedPassword(user.password);
-      },
-    },
+    // hooks: {
+    //   beforeCreate: async (user) => {
+    //     user.password = await encryptedPassword(user.password);
+    //   },
+    // },
   }
 );
 

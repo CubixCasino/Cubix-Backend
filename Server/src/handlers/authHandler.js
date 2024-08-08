@@ -1,5 +1,7 @@
+import generateJWT from "../config/middleware/jwt.generate.js";
 import { validateUser } from "../controllers/authController.js";
 import { parseLoginData } from "../validates/userValidates.js";
+
 export const authHandler = async (req, res) => {
   const { data, error } = parseLoginData(req.body);
 
@@ -15,14 +17,18 @@ export const authHandler = async (req, res) => {
       data.password
     );
 
+    const token = await generateJWT(user.id);
+
     return res.status(200).json({
       status: true,
       message: "User validated successfully",
+      token: token,
+      tokenHabanero: habaneroData.Token,
       user: {
-        id: user.id,
         username: user.username,
         email: user.email,
-        phoneNumber:user.phoneNumber
+        phoneNumber: user.phoneNumber,
+        picture: user.picture,
       },
       habaneroData,
     });
