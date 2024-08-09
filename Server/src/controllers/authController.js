@@ -41,7 +41,7 @@ export const validateWitchHabanero = async (username, password) => {
 
 export const validateUser = async (username, password) => {
   const user = await userService.findOneByUserName(username);
-  if(!user.status) return "User does not exist";
+  if(!user.status) throw new Error("User does not exist");
 
   if (!user) {
     throw new Error("User not found");
