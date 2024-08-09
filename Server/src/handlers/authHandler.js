@@ -29,6 +29,7 @@ export const authHandler = async (req, res) => {
         email: user.email,
         phoneNumber: user.phoneNumber,
         picture: user.picture,
+        id: user.id,
       },
       habaneroData,
     });
