@@ -5,7 +5,7 @@ export const userSchema = z.object({
     .string({ message: "Username is required." })
     .min(3, "Username must be at least 3 characters")
     .max(150, "Username cannot be more than 150 characters"),
-    picture: z
+  picture: z
     .string({ message: "Picture url is required." })
     .url({ message: "Invalid url" }),
   surname: z

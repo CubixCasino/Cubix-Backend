@@ -50,11 +50,11 @@ const User = sequelize.define(
     },
   },
   {
-    // hooks: {
-    //   beforeCreate: async (user) => {
-    //     user.password = await encryptedPassword(user.password);
-    //   },
-    // },
+    hooks: {
+      beforeCreate: async (user) => {
+        user.password = await encryptedPassword(user.password);
+      },
+    },
   }
 );
 
