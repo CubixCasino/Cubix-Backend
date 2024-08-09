@@ -30,6 +30,7 @@ export const authHandler = async (req, res) => {
         phoneNumber: user.phoneNumber,
         picture: user.picture,
         id: user.id,
+        birthdate: user.birthdate,
       },
       habaneroData,
     });
